@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    margin: 1.5em;
+    font-family: 'Poppins', sans-serif;
+}
+//HEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADER
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.heroImg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/hero.jpg);
+    width: 100%;
+    height: 50em;
+    z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nameMenu{
+    color: #233e97;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    #menu{
+        font-size: 1.5rem;
+        margin-top: .2rem;
+        margin-right: .2rem;
+        color: #233e97;
+        cursor: pointer;
+    }
+}
+
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 5;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+}
+
+section.hero{
+    //position: relative;
+    color: black;
+    .cont{
+        margin-top: 5rem;
+        h1{
+            font-size: 2.8rem;
+            color: #233e97;
+            text-shadow: 2px 2px 1px gray;
+        }
+        .subhead{
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        .circle{
+            position: absolute;
+            height: 20em;
+            width: 20em;
+            background-color: #ffde59;
+            z-index: -1;
+            border-radius: 50%;
+            display: inline-block;
+            top: 5em;
+        }
+    }
+    .logoMainDiv{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        top: -2em;
+        .logo{
+            width: 40em;
+        }
+    }
+}
+
+//SERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICES
+section.services{
+    position: relative;
+    h1{
+        font-size: 5rem;
+        text-transform: uppercase;
+        letter-spacing: -.3rem;
+        text-align: center;
+        text-shadow: 2px 2px 1px gray;
+        margin: 3rem;
+    }
+    .topic{
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    .info, .infoL{
+        font-size: 1.3rem;
+    }
+    #bins, #paperBin{
+        width: 100%;
+        height: 20em;
+        object-fit: cover;
+        margin-bottom: 2.5em;
+        object-position: 0 100%;
+    }
+    #bagsLawn{
+        width: 100%;
+        height: 20em;
+        object-fit: cover;
+        margin-bottom: 2.5em;
+        object-position: 0 50%;
+    }
+    .hexa{
+        position: absolute;
+        top: 1.73em;
+        z-index: -1;
+    }
+    .infoDot{
+        position: absolute;
+        height: 18em;
+        width: 18em;
+        background-color: #ffde59;
+        z-index: -1;
+        border-radius: 50%;
+        display: inline-block;
+        top: 6em;
+    }
+    .infoDot2{
+        position: absolute;
+        height: 18em;
+        width: 18em;
+        background-color: #ffde59;
+        z-index: -1;
+        border-radius: 50%;
+        display: inline-block;
+        top: 80em;
+    }
+    .getStarted{
+        display: block;
+        margin: 2em auto;
+        background-color: #ffde59;
+        height: 5em;
+        width: 15em;
+        box-shadow: 5px 5px 3px #233e97;
+        a{
+            color: #233e97;
+            text-transform: uppercase;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+}
+//BREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAKBREAK
+section.break{
+    position: relative;
+    .breakImg{
+        //position: absolute;
+        background: url(../images/break.png);
+        margin-top: 5em;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 2.5em;
+        z-index: -1;
+    }
+    p{
+        // position: absolute;
+        // font-size: 2rem;
+        //top: 18rem;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: -15rem;
+        margin-bottom: 20rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #233e97;
+        text-shadow: 2px 2px 1px gray;
+        //margin: 18rem 10rem;
+    }
+}
+//CALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDAR
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: hidden;
+}
+
+.calendar{
+    width: 45rem;
+    height: 52rem;
+    background-color: rgb(71, 71, 71);
+    box-shadow: 0 .5rem 3rem black(0,0,0,0.4);
+    border-radius: 10px;
+}
+
+.month{
+    width: 100%;
+    height: 12rem;
+    background-color: rgb(0, 70, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem .5rem black(0,0,0,0.5);
+    border-radius: 10px;
+    i{
+        margin: 0 20px;
+        font-size: 2.5rem;
+        cursor: pointer;   
+    }
+    h1{
+        font-size: 3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1rem;
+    }
+    p{
+        font-size: 1.6rem;
+    }
+}
+
+.weekdays{
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.weekdays div{
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem/7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0.3rem 0.5rem black (0,0,0,0.5);
+}
+
+.days{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+
+.days div{
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: calc(40.4rem/7); // might be 40.2 rem/7
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem black(0,0,0,0.5);
+    transition: background-color 0.2s;
+}
+
+.prev-date, .next-date{
+    opacity: 0.5;
+}
+
+.today{
+    background-color: rgb(0, 70, 0);
+    cursor: pointer;
+}
+
+.days div:hover:not(.today){
+    background-color: black;
+    border: 0.2rem solid gray;
+    cursor: pointer;
+}
