@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; //adds sizing with border, padding and margin taken into consideration
     font-family: 'Poppins', sans-serif;
 }
 
@@ -15,32 +15,36 @@ body{
 }
 //HEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADERHEROMENUHEADER
 a{
-    text-decoration: none;
+    text-decoration: none; //take off underline
     font-size: 1.3rem;
 }
 
 .heroImg{
-    position: absolute;
+    position: absolute; //remove from flow since background
     top: 0;
     left: 0;
     background: url(../images/hero.jpg);
     width: 100%;
-    height: 50em;
-    z-index: -1;
-    background-size: contain;
+    height: 50em; //vh throws off flow when window resize
+    z-index: -1; //background
+    background-size: contain; //wont distort as much as cover
     background-repeat: no-repeat;
+    animation: introLoad 5s forwards; //drops down when page is loaded
 }
 
-.nameMenu{
+.nameMenu{//top left menu logo
     color: #233e97;
     font-weight: bold;
     font-size: 1.3rem;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    #menu{
+header{ //menu creation
+    display: flex; //moves menu to right of page
+    justify-content: space-between; //seperates from top left logo
+    #menu{//menu icon
+        // position: fixed;  static menu button might need
+        // right: 2rem;         diff colored background
+        //z-index: 4;           if implemented
         font-size: 1.5rem;
         margin-top: .2rem;
         margin-right: .2rem;
@@ -49,22 +53,48 @@ header{
     }
 }
 
-nav{
+nav{ //navigation bar (after menu button clicked)
     position: fixed;
     right: 0;
     top: 0;
     background: white;
-    height: 100vh;
+    height: 100vh; //takes up viewport
     width: 50%;
-    z-index: 5;
+    z-index: 5; //will display over everything
     text-transform: uppercase;
     transform: translateX(100%);
     transition: transform .5s ease-in-out;
 }
 
+ul{ //menu options
+    list-style-type: none; //remove bullet points
+    padding: 0;
+    margin-top: 6rem;
+    a{
+        display: block; //block in order to put padding
+        color: black;
+        padding: .75em 2em;
+        width: 100%;
+        &:hover{
+            background: #233e97;
+            color: white;
+        }
+    }
+}
+
+#close{ //close button when nav open
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2em;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
 section.hero{
     //position: relative;
     color: black;
+    animation: moveDown 1s ease-in-out forwards; //entire content comes down when page load
     .cont{
         margin-top: 5rem;
         h1{
@@ -84,16 +114,17 @@ section.hero{
             z-index: -1;
             border-radius: 50%;
             display: inline-block;
-            top: 5em;
+            top: -4em;
         }
     }
-    .logoMainDiv{
+    .logoMainDiv{//business logo
         position: relative;
         display: flex;
         justify-content: center;
         top: -2em;
         .logo{
             width: 40em;
+            //animation: moveArrow .5s alternate-reverse infinite;
         }
     }
 }
@@ -101,7 +132,7 @@ section.hero{
 //SERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICESSERVICES
 section.services{
     position: relative;
-    h1{
+    h1{//services header
         font-size: 5rem;
         text-transform: uppercase;
         letter-spacing: -.3rem;
@@ -121,16 +152,16 @@ section.services{
         height: 20em;
         object-fit: cover;
         margin-bottom: 2.5em;
-        object-position: 0 100%;
+        object-position: 0 100%; //focus on different part of img
     }
     #bagsLawn{
         width: 100%;
         height: 20em;
         object-fit: cover;
         margin-bottom: 2.5em;
-        object-position: 0 50%;
+        object-position: 0 50%; //focus on diff part of img
     }
-    .hexa{
+    .hexa{ //background designs
         position: absolute;
         top: 1.73em;
         z-index: -1;
@@ -155,14 +186,14 @@ section.services{
         display: inline-block;
         top: 80em;
     }
-    .getStarted{
-        display: block;
+    .getStarted{ //get started button
+        display: block; //make it take block space
         margin: 2em auto;
         background-color: #ffde59;
         height: 5em;
         width: 15em;
         box-shadow: 5px 5px 3px #233e97;
-        a{
+        a{//text within button
             color: #233e97;
             text-transform: uppercase;
             font-size: 2rem;
@@ -174,11 +205,10 @@ section.services{
 section.break{
     position: relative;
     .breakImg{
-        //position: absolute;
         background: url(../images/break.png);
         margin-top: 5em;
         width: 100%;
-        object-fit: cover;
+        object-fit: cover; //fits img to right size
         margin-bottom: 2.5em;
         z-index: -1;
     }
@@ -192,10 +222,26 @@ section.break{
         color: #233e97;
         text-shadow: 2px 2px 1px gray;
     }
-    
+    #downArrow{
+        position: absolute;
+        font-size: 5rem;
+        color: #233e97;
+        top: 22rem;
+        stroke: #ffde59;
+        animation: moveArrow .5s alternate-reverse infinite; //moves arrow up and down infinite
+    }
 }
 //CALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDARCALENDAR
-.container{
+.calendarH{//calendar section header
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: -.3rem;
+    text-align: center;
+    text-shadow: 2px 2px 1px gray;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.container{//container around calendar
     width: 100%;
     height: 100%;
     background-color: white;
@@ -203,76 +249,76 @@ section.break{
     display: flex;
     justify-content: center;
     align-items: center;
-    display: hidden;
+    display: hidden;//hid but still around just in case
 }
 
-.calendar{
-    width: 45rem;
-    height: 52rem;
+.calendar{//part that contains days
+    width: 30rem; //45rem
+    height: 37rem; //52rem
     background-color: rgb(71, 71, 71);
     box-shadow: 0 .5rem 3rem black(0,0,0,0.4);
-    border-radius: 10px;
+    border-radius: 5px; //10px
 }
 
-.month{
+.month{//part that contains month and option to switch to next month
     width: 100%;
-    height: 12rem;
-    background-color: rgb(0, 70, 0);
+    height: 8rem; //12rem
+    background-color: #233e97;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: .2rem;
     text-align: center;
     text-shadow: 0 0.3rem .5rem black(0,0,0,0.5);
-    border-radius: 10px;
-    i{
+    border-radius: 5px 5px 0 0; //10px ...
+    i{ //side arrows to switch month
         margin: 0 20px;
-        font-size: 2.5rem;
+        font-size: 2.2rem; //2.5rem
         cursor: pointer;   
     }
-    h1{
-        font-size: 3rem;
+    h1{ //month
+        font-size: 2.5rem; //3rem
         font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 0.2rem;
-        margin-bottom: 1rem;
+        margin-bottom: .2rem; //1rem
     }
-    p{
-        font-size: 1.6rem;
+    p{ //todays day/date
+        font-size: 1.3rem; //1.6rem
     }
 }
 
-.weekdays{
+.weekdays{//mon, tue, wed...
     width: 100%;
     height: 5rem;
-    padding: 0 0.4rem;
+    padding: 0 0.2rem; //0 0.4rem at both ends of day
     display: flex;
     align-items: center;
 }
 
-.weekdays div{
-    font-size: 1.5rem;
+.weekdays div{ //each individual day
+    font-size: 1.2rem; //1.5rem
     font-weight: 400;
     letter-spacing: 0.1rem;
-    width: calc(44.2rem/7);
+    width: calc(29.6rem/7); //calc(44.2/7) 30rem width minus .4rem total padding divided by amound of days
     display: flex;
     justify-content: center;
     align-items: center;
     text-shadow: 0.3rem 0.5rem black (0,0,0,0.5);
 }
 
-.days{
+.days{ //all days 1,2,3,4....
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    padding: 0.2rem;
+    flex-wrap: wrap; //wrap to next row after full width of calendar
+    padding: 0.1rem; //.2rem at ends of days
 }
 
-.days div{
-    font-size: 1.4rem;
-    margin: 0.3rem;
-    width: calc(40.4rem/7); // might be 40.2 rem/7
-    height: 5rem;
+.days div{ //each individual day
+    font-size: 1rem; //1.4rem
+    margin: 0.2rem; //.3rem
+    width: calc(27rem/7); // calc(40.4rem/7)
+    height: 3.5rem; //5rem
     display: flex;
     justify-content: center;
     align-items: center;
@@ -280,13 +326,15 @@ section.break{
     transition: background-color 0.2s;
 }
 
-.prev-date, .next-date{
+.prev-date, .next-date{ //next and prev mos dates
     opacity: 0.5;
 }
 
-.today{
-    background-color: rgb(0, 70, 0);
+.today{ //today date square
+    background-color: #ffde59;
+    color: black;
     cursor: pointer;
+
 }
 
 .days div:hover:not(.today){
@@ -294,3 +342,188 @@ section.break{
     border: 0.2rem solid gray;
     cursor: pointer;
 }
+//CONTACTUSCONTACTUSCONTACTUSCONTACTUSCONTACTUSCONTACTUSCONTACTUSCONTACTUSCONTACTUSCONTACTUSCONTACTUS
+
+section.contactUs{
+    position: relative;
+    h1{ //contact us header
+        margin: 3rem;
+        margin-top: 10rem;
+        text-align: center;
+        font-size: 5rem;
+        letter-spacing: -.2rem;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 1px gray;
+    }
+    .rectContact{//contact us wrapper/ contact form wrapper
+        display: flex;
+        justify-content: center;
+        label{
+            display: block;//take block space
+            text-align: right;
+            width: 10rem;//make labels not be overcrowded
+            float: left; //place left of inputs
+            margin-right: 1rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #233e97;
+        }
+        input, textarea, select{
+            font-weight: 400;
+            margin: 0 2em;
+            display: block;//take block space
+            width: 17em; //uniform size of input fields
+            min-height: 2em;
+            margin-bottom: 2em;
+        }
+        .submitB{ //type submit
+            display: block;//take block space
+            width: 17em;
+            margin: 0 auto;
+            margin-top: 3em;
+            font-size: 1.5rem;
+            //font-weight: bold; MAYBE
+            background-color: #233e97;
+            border: none;
+            color: #ffde59;
+            box-shadow: 2px 2px 1px gray;
+            cursor: pointer;
+        }
+    }
+}
+
+//FOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTER
+
+footer p{
+    margin-top: 7rem;
+    text-align: center;
+    background-color: #233e97;
+    color: white;
+}
+footer a{
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+//sssssssssssssssssssssssssssssssssssssssssssssscriptsssssssssssssssssssssssssssssssssssssssssssssscriptsssssssssssssssssssssssssssssssssssssssssssssscript
+.open-nav{//to open when clicked menu icon
+    transform: translateX(0%);
+}
+//%%%%%%%%%%%%animations%%%%%%%%%%%%animations%%%%%%%%%%%%animations%%%%%%%%%%%%animations%%%%%%%%%%%%animations%%%%%%%%%%%%animations%%%%%%%%%%%%animations
+
+@keyframes introLoad{ //trash bags image dropdown when page load
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow{ //infinite movement of arrow up and down
+    from{
+        transform: translateY(-15px)
+    }
+    to{
+        transform: translateY(15px);
+    }
+}
+
+@keyframes moveDown{ //dropdown of entire hero section content
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+//TABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLETTABLET
+@media only screen and (min-width:680px){
+    body{
+        margin: 1.5em 5em;//everything gets bigger margin
+        margin-top: 2em;
+        font-family: 'Poppins', sans-serif;
+    }
+    //TABLETHEROTABLETHEROTABLETHEROTABLETHEROTABLETHEROTABLETHEROTABLETHEROTABLETHEROTABLETHERO
+    .heroImg{
+        width: 100%;//now image takes cover size to account for bigger size of page/screen
+        height: 50em;
+        background-size: cover;
+    }
+    //TABLETBREAKTABLETBREAKTABLETBREAKTABLETBREAKTABLETBREAKTABLETBREAKTABLETBREAKTABLETBREAKTABLETBREAK
+    section.break{
+        p{
+            margin-top: -20rem;//realign text
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 3rem;//bigger font size
+        }
+        #downArrow{
+            top: 8rem;//moved to top of break img and made bigger
+            font-size: 7rem;
+        }
+    }
+}
+//SMALLDESKTOPSMALLDESKTOPSMALLDESKTOPSMALLDESKTOPSMALLDESKTOPSMALLDESKTOPSMALLDESKTOPSMALLDESKTOPSMALLDESKTOP
+
+@media only screen and (min-width: 920px){
+    header{
+        .nameMenu{
+            text-shadow: 2px 2px 1px gray;
+            color: #ffde59;
+            margin-top: .8rem;
+            font-size: 1.5rem;
+            span{
+                color: #233e97;
+            }
+        }//end nameMenu
+        #menu{
+            display: none;//take away menu icon
+        }//end #menu
+        nav{
+            transform: translateX(0%); //bring in nav bar
+            position: unset; //remove from fixed
+            display: block; //take block space
+            width: auto; //take down background size both w and h
+            height: auto;
+            background: none; //no background
+            #close{
+                display: none; //remove close button
+            }
+        }//end nav
+        ul{
+            display: flex; //set in row accros top of page
+            margin: 0;
+            margin-right: -2rem; //move more towards right of page
+            a{
+                font-weight: 600; 
+                color: #ffde59;
+                text-shadow: 2px 2px 1px gray;
+                &:hover{
+                    background: none; //remove mobile hover settings
+                    color: #ffde59;
+                    text-decoration: underline;
+                }//end hover
+            }//end a
+        }//end ul
+    }//end header
+    .heroImg{
+        left: unset;
+        right: 0;
+        width: 60%;
+        height: 50em;
+    }
+    section.hero{
+        .cont{
+            h1{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                right: 20rem;
+            }
+        }
+
+    }
+}//end small desktop

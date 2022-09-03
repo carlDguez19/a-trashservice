@@ -29,6 +29,8 @@ a {
   z-index: -1;
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-animation: introLoad 5s forwards;
+          animation: introLoad 5s forwards;
 }
 
 .nameMenu {
@@ -62,8 +64,35 @@ nav {
   transition: transform 0.5s ease-in-out;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 6rem;
+}
+ul a {
+  display: block;
+  color: black;
+  padding: 0.75em 2em;
+  width: 100%;
+}
+ul a:hover {
+  background: #233e97;
+  color: white;
+}
+
+#close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 2em;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
 section.hero {
   color: black;
+  -webkit-animation: moveDown 1s ease-in-out forwards;
+          animation: moveDown 1s ease-in-out forwards;
 }
 section.hero .cont {
   margin-top: 5rem;
@@ -85,7 +114,7 @@ section.hero .cont .circle {
   z-index: -1;
   border-radius: 50%;
   display: inline-block;
-  top: 5em;
+  top: -4em;
 }
 section.hero .logoMainDiv {
   position: relative;
@@ -195,6 +224,24 @@ section.break p {
   color: #233e97;
   text-shadow: 2px 2px 1px gray;
 }
+section.break #downArrow {
+  position: absolute;
+  font-size: 5rem;
+  color: #233e97;
+  top: 22rem;
+  stroke: #ffde59;
+  animation: moveArrow 0.5s alternate-reverse infinite;
+}
+
+.calendarH {
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.3rem;
+  text-align: center;
+  text-shadow: 2px 2px 1px gray;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
 
 .container {
   width: 100%;
@@ -208,54 +255,54 @@ section.break p {
 }
 
 .calendar {
-  width: 45rem;
-  height: 52rem;
+  width: 30rem;
+  height: 37rem;
   background-color: rgb(71, 71, 71);
   box-shadow: 0 0.5rem 3rem black(0, 0, 0, 0.4);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .month {
   width: 100%;
-  height: 12rem;
-  background-color: rgb(0, 70, 0);
+  height: 8rem;
+  background-color: #233e97;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem;
   text-align: center;
   text-shadow: 0 0.3rem 0.5rem black(0, 0, 0, 0.5);
-  border-radius: 10px;
+  border-radius: 5px 5px 0 0;
 }
 .month i {
   margin: 0 20px;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   cursor: pointer;
 }
 .month h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
 }
 .month p {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
 }
 
 .weekdays {
   width: 100%;
   height: 5rem;
-  padding: 0 0.4rem;
+  padding: 0 0.2rem;
   display: flex;
   align-items: center;
 }
 
 .weekdays div {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.1rem;
-  width: 6.3142857143rem;
+  width: 4.2285714286rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -266,14 +313,14 @@ section.break p {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 0.2rem;
+  padding: 0.1rem;
 }
 
 .days div {
-  font-size: 1.4rem;
-  margin: 0.3rem;
-  width: 5.7714285714rem;
-  height: 5rem;
+  font-size: 1rem;
+  margin: 0.2rem;
+  width: 3.8571428571rem;
+  height: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,7 +333,8 @@ section.break p {
 }
 
 .today {
-  background-color: rgb(0, 70, 0);
+  background-color: #ffde59;
+  color: black;
   cursor: pointer;
 }
 
@@ -294,4 +342,199 @@ section.break p {
   background-color: black;
   border: 0.2rem solid gray;
   cursor: pointer;
+}
+
+section.contactUs {
+  position: relative;
+}
+section.contactUs h1 {
+  margin: 3rem;
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 5rem;
+  letter-spacing: -0.2rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 1px gray;
+}
+section.contactUs .rectContact {
+  display: flex;
+  justify-content: center;
+}
+section.contactUs .rectContact label {
+  display: block;
+  text-align: right;
+  width: 10rem;
+  float: left;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #233e97;
+}
+section.contactUs .rectContact input, section.contactUs .rectContact textarea, section.contactUs .rectContact select {
+  font-weight: 400;
+  margin: 0 2em;
+  display: block;
+  width: 17em;
+  min-height: 2em;
+  margin-bottom: 2em;
+}
+section.contactUs .rectContact .submitB {
+  display: block;
+  width: 17em;
+  margin: 0 auto;
+  margin-top: 3em;
+  font-size: 1.5rem;
+  background-color: #233e97;
+  border: none;
+  color: #ffde59;
+  box-shadow: 2px 2px 1px gray;
+  cursor: pointer;
+}
+
+footer p {
+  margin-top: 7rem;
+  text-align: center;
+  background-color: #233e97;
+  color: white;
+}
+
+footer a {
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: underline;
+}
+
+.open-nav {
+  transform: translateX(0%);
+}
+
+@-webkit-keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@-webkit-keyframes moveArrow {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+@keyframes moveArrow {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+@-webkit-keyframes moveDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes moveDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em 5em;
+    margin-top: 2em;
+    font-family: "Poppins", sans-serif;
+  }
+  .heroImg {
+    width: 100%;
+    height: 50em;
+    background-size: cover;
+  }
+  section.break p {
+    margin-top: -20rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+  }
+  section.break #downArrow {
+    top: 8rem;
+    font-size: 7rem;
+  }
+}
+@media only screen and (min-width: 920px) {
+  header .nameMenu {
+    text-shadow: 2px 2px 1px gray;
+    color: #ffde59;
+    margin-top: 0.8rem;
+    font-size: 1.5rem;
+  }
+  header .nameMenu span {
+    color: #233e97;
+  }
+  header #menu {
+    display: none;
+  }
+  header nav {
+    transform: translateX(0%);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  header nav #close {
+    display: none;
+  }
+  header ul {
+    display: flex;
+    margin: 0;
+    margin-right: -2rem;
+  }
+  header ul a {
+    font-weight: 600;
+    color: #ffde59;
+    text-shadow: 2px 2px 1px gray;
+  }
+  header ul a:hover {
+    background: none;
+    color: #ffde59;
+    text-decoration: underline;
+  }
+  .heroImg {
+    left: unset;
+    right: 0;
+    width: 60%;
+    height: 50em;
+  }
+  section.hero .cont h1 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    right: 20rem;
+  }
 }/*# sourceMappingURL=main.css.map */
