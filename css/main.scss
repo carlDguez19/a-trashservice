@@ -161,30 +161,30 @@ section.services{
         margin-bottom: 2.5em;
         object-position: 0 50%; //focus on diff part of img
     }
-    .hexa{ //background designs
-        position: absolute;
-        top: 1.73em;
-        z-index: -1;
-    }
     .infoDot{
         position: absolute;
-        height: 18em;
-        width: 18em;
+        height: 20em;
+        width: 20em;
         background-color: #ffde59;
         z-index: -1;
         border-radius: 50%;
         display: inline-block;
         top: 6em;
     }
+    .hexa{ //background designs
+        position: absolute;
+        top: .8em;
+        z-index: -1;
+    }
     .infoDot2{
         position: absolute;
-        height: 18em;
-        width: 18em;
+        height: 20em;
+        width: 20em;
         background-color: #ffde59;
         z-index: -1;
         border-radius: 50%;
         display: inline-block;
-        top: 80em;
+        top: 72em;
     }
     .getStarted{ //get started button
         display: block; //make it take block space
@@ -519,11 +519,92 @@ footer a{
         .cont{
             h1{
                 position: absolute;
-                display: flex;
-                justify-content: center;
-                right: 20rem;
+                right: 3rem;
+                font-size: 5rem;
+                width: 50%;
+                text-align: center;
+                //margin-right: -2rem;
+            }
+            .subhead{
+                position: absolute;
+                right: 3rem;
+                top: 15rem;
+                font-weight: 500;
+                font-size: 1.8rem;
+                text-align: center;
+                width: 50%;
+            }
+            .circle{
+                position: absolute;
+                right: 20%;
+                top: -2em;
+            }
+        }
+        .logoMainDiv{
+            //position: absolute;
+            display: unset;
+            top: -5em;
+            left: -3%;
+            .logo{
+                width: 42em;
             }
         }
 
+    }
+    //SMALLDESKTOPSERVICESSMALLDESKTOPSERVICESSMALLDESKTOPSERVICESSMALLDESKTOPSERVICESSMALLDESKTOPSERVICESSMALLDESKTOPSERVICESSMALLDESKTOPSERVICESSMALLDESKTOPSERVICESSMALLDESKTOPSERVICES
+    .rectBorder{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 10em;
+        margin-bottom: 8em;
+        margin-left: 5%;
+        margin-right: 5%;
+        .content{
+            text-align: right;
+            width: 35em;
+            .topic{
+                font-size: 2.5rem;
+            }
+            .info, .infoL{
+                font-size: 1.6rem;
+            }
+            //margin-left: 20rem;
+        }
+    }
+    .rectBorderL{
+        grid-template-areas: "left right";
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        gap: 10em;
+        margin-bottom: 8em;
+        margin-left: 5%;
+        margin-right: 5%;
+        img{
+            grid-area: left;
+            width: 25em;
+        }
+        .content{
+            text-align: left;
+            width: 35em;
+            justify-self: left;
+            .topic{
+                font-size: 2.5rem;
+            }
+            .info, .infoL{
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .infoDot{
+        margin-top: 3em;
+        left: 15%;
+    }
+    .infoDot2{
+        margin-top: -6em;
+        left: 15%;
+    }
+    .hexa{
+        right: 15%;
+        margin-top: 0em;
     }
 }//end small desktop

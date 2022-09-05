@@ -162,30 +162,30 @@ section.services #bagsLawn {
   -o-object-position: 0 50%;
      object-position: 0 50%;
 }
-section.services .hexa {
-  position: absolute;
-  top: 1.73em;
-  z-index: -1;
-}
 section.services .infoDot {
   position: absolute;
-  height: 18em;
-  width: 18em;
+  height: 20em;
+  width: 20em;
   background-color: #ffde59;
   z-index: -1;
   border-radius: 50%;
   display: inline-block;
   top: 6em;
 }
+section.services .hexa {
+  position: absolute;
+  top: 0.8em;
+  z-index: -1;
+}
 section.services .infoDot2 {
   position: absolute;
-  height: 18em;
-  width: 18em;
+  height: 20em;
+  width: 20em;
   background-color: #ffde59;
   z-index: -1;
   border-radius: 50%;
   display: inline-block;
-  top: 80em;
+  top: 72em;
 }
 section.services .getStarted {
   display: block;
@@ -533,8 +533,85 @@ footer a {
   }
   section.hero .cont h1 {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    right: 20rem;
+    right: 3rem;
+    font-size: 5rem;
+    width: 50%;
+    text-align: center;
+  }
+  section.hero .cont .subhead {
+    position: absolute;
+    right: 3rem;
+    top: 15rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 50%;
+  }
+  section.hero .cont .circle {
+    position: absolute;
+    right: 20%;
+    top: -2em;
+  }
+  section.hero .logoMainDiv {
+    display: unset;
+    top: -5em;
+    left: -3%;
+  }
+  section.hero .logoMainDiv .logo {
+    width: 42em;
+  }
+  .rectBorder {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10em;
+    margin-bottom: 8em;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .rectBorder .content {
+    text-align: right;
+    width: 35em;
+  }
+  .rectBorder .content .topic {
+    font-size: 2.5rem;
+  }
+  .rectBorder .content .info, .rectBorder .content .infoL {
+    font-size: 1.6rem;
+  }
+  .rectBorderL {
+    grid-template-areas: "left right";
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 10em;
+    margin-bottom: 8em;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .rectBorderL img {
+    grid-area: left;
+    width: 25em;
+  }
+  .rectBorderL .content {
+    text-align: left;
+    width: 35em;
+    justify-self: left;
+  }
+  .rectBorderL .content .topic {
+    font-size: 2.5rem;
+  }
+  .rectBorderL .content .info, .rectBorderL .content .infoL {
+    font-size: 1.6rem;
+  }
+  .infoDot {
+    margin-top: 3em;
+    left: 15%;
+  }
+  .infoDot2 {
+    margin-top: -6em;
+    left: 15%;
+  }
+  .hexa {
+    right: 15%;
+    margin-top: 0em;
   }
 }/*# sourceMappingURL=main.css.map */
