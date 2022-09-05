@@ -614,4 +614,12 @@ footer a {
     right: 15%;
     margin-top: 0em;
   }
+  section.break p {
+    margin-top: -27rem;
+    font-size: 5rem;
+  }
+  section.break #downArrow {
+    top: 20rem;
+    font-size: 10rem;
+  }
 }/*# sourceMappingURL=main.css.map */
