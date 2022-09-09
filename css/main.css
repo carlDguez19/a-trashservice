@@ -607,12 +607,12 @@ footer a {
     left: 15%;
   }
   .infoDot2 {
-    margin-top: -6em;
+    margin-top: 1em;
     left: 15%;
   }
   .hexa {
-    right: 15%;
-    margin-top: 0em;
+    right: 20%;
+    margin-top: 0.2em;
   }
   section.break p {
     margin-top: -27rem;
@@ -621,5 +621,54 @@ footer a {
   section.break #downArrow {
     top: 20rem;
     font-size: 10rem;
+  }
+  .calendar {
+    width: 45rem;
+    height: 52rem;
+    border-radius: 10px;
+  }
+  .month {
+    height: 12rem;
+    border-radius: 10px 10px 0 0;
+  }
+  .month i {
+    font-size: 2.5rem;
+  }
+  .month h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .month p {
+    font-size: 1.6rem;
+  }
+  .weekdays {
+    padding: 0 0.4rem;
+  }
+  .weekdays div {
+    font-size: 1.5rem;
+    width: 6.3142857143rem;
+  }
+  .days {
+    padding: 0.2rem;
+  }
+  .days div {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: 5.7714285714rem;
+    height: 5rem;
+  }
+  section.contactUs .rectContact label {
+    width: 15rem;
+    font-size: 1.5rem;
+  }
+  section.contactUs .rectContact input, section.contactUs .rectContact textarea, section.contactUs .rectContact select {
+    width: 20em;
+    min-height: 2.2em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1050px;
+    margin: 0 auto;
   }
 }/*# sourceMappingURL=main.css.map */
